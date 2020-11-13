@@ -9,12 +9,10 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
-import org.jboss.logmanager.MDC;
+import io.quarkus.qe.traceable.TraceableResource;
 
 @Path("/ping")
-public class PingResource {
-
-    private String lastTraceId;
+public class PingResource extends TraceableResource {
 
     @Inject
     @RestClient
@@ -23,15 +21,8 @@ public class PingResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getPing(@Context HttpHeaders headers) {
-        lastTraceId = MDC.get("traceId");
+        recordTraceId();
 
         return "ping " + pongClient.getPong();
-    }
-
-    @GET
-    @Path("/lastTraceId")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getLastTraceId() {
-        return lastTraceId;
     }
 }
