@@ -12,12 +12,12 @@ import org.junit.jupiter.api.Test;
 import org.keycloak.authorization.client.AuthzClient;
 import org.keycloak.authorization.client.Configuration;
 
-import io.quarkus.qe.containers.KeycloakQuarkusTestResource;
+import io.quarkus.qe.containers.AuthProviderQuarkusTestResource;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
-@QuarkusTestResource(KeycloakQuarkusTestResource.class)
+@QuarkusTestResource(AuthProviderQuarkusTestResource.class)
 public class UserResourceTest {
 
     private static final String OIDC_AUTH_SERVER = "http://localhost:8180/auth/realms/test-realm";
