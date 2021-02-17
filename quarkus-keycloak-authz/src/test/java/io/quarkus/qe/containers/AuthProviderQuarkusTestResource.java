@@ -18,8 +18,8 @@ public class AuthProviderQuarkusTestResource implements QuarkusTestResourceLifec
     public Map<String, String> start() {
 
         // container = new KeycloakContainer();
-        // container = new RedHatSso74Container();
-        container = new RedHatSso73Container();
+        container = new RedHatSso74Container();
+        // container = new RedHatSso73Container();
         container.waitingFor(Wait.forHttp("/auth").withStartupTimeout(Duration.ofMinutes(5)));
         container.start();
 

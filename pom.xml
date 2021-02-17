@@ -14,6 +14,7 @@
         <module>quarkus-opentracing</module>
         <module>quarkus-panache</module>
         <module>quarkus-keycloak-authz</module>
+        <module>quarkus-custom-config-source</module>
     </modules>
 
     <properties>
@@ -27,9 +28,7 @@
         <jackson-databind.version>2.11.3</jackson-databind.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
-        <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.version>1.10.5.Final</quarkus.version>
+        
         <rest-assured.version>4.3.1</rest-assured.version>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
         <junit.version>5.7.0</junit.version>
@@ -101,29 +100,6 @@
                 <version>${compiler-plugin.version}</version>
             </plugin>
             <plugin>
-                <groupId>net.revelc.code.formatter</groupId>
-                <artifactId>formatter-maven-plugin</artifactId>
-                <version>${formatter-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>validate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <artifactId>quarkus-ide-config</artifactId>
-                        <groupId>io.quarkus</groupId>
-                        <version>${quarkus.version}</version>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <configFile>eclipse-format.xml</configFile>
-                    <lineEnding>LF</lineEnding>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>io.quarkus</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
                 <version>${quarkus.version}</version>
@@ -153,6 +129,25 @@
     </build>
 
     <profiles>
+        <profile>
+            <id>upstream</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
+                <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
+                <quarkus.version>999-SNAPSHOT</quarkus.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>product</id>
+            <properties>
+                <quarkus.platform.artifact-id>quarkus-universe-bom</quarkus.platform.artifact-id>
+                <quarkus.platform.group-id>com.redhat.quarkus</quarkus.platform.group-id>
+                <quarkus.version>1.7.6.Final-redhat-00014</quarkus.version>
+            </properties>
+        </profile>
         <profile>
             <id>native</id>
             <activation>
