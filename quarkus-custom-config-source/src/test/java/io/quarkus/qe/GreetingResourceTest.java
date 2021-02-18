@@ -18,6 +18,7 @@ public class GreetingResourceTest {
     private static final String CUSTOM_PROPERTY = "my.property";
     private static final String REQUEST_SCOPE_PATH = "/request-api";
     private static final String APPLICATION_SCOPE_PATH = "/application-api";
+    private static final String EVENT_APPLICATION_SCOPE_PATH = "/event-application-api";
 
     private static final String DEFAULT_VALUE = "Default";
     private static final String TEST_VALUE = "Test";
@@ -41,6 +42,14 @@ public class GreetingResourceTest {
 
         whenUpdateCustomPropertyTo(TEST_VALUE);
         thenGreetingsApiReturns(APPLICATION_SCOPE_PATH, "Hello " + TEST_VALUE);
+    }
+
+    @Test
+    public void shouldUpdateCustomPropertyUsingEvents() {
+        thenGreetingsApiReturns(EVENT_APPLICATION_SCOPE_PATH, "Hello " + DEFAULT_VALUE);
+
+        whenUpdateCustomPropertyTo(TEST_VALUE);
+        thenGreetingsApiReturns(EVENT_APPLICATION_SCOPE_PATH, "Hello " + TEST_VALUE);
     }
 
     private void whenUpdateCustomPropertyTo(String newValue) {

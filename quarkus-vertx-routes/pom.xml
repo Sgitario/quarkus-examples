@@ -12,33 +12,22 @@
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>quarkus-custom-config-source</artifactId>
-    
-    <properties>
-        <configsource-memory.version>1.0.11</configsource-memory.version>
-    </properties>
+    <artifactId>quarkus-vertx-routes</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-smallrye-openapi</artifactId>
+            <artifactId>quarkus-vertx-web</artifactId>
         </dependency>
         
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-resteasy</artifactId>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.microprofile-ext.config-ext</groupId>
-            <artifactId>configsource-memory</artifactId>
-            <version>${configsource-memory.version}</version>
+            <artifactId>quarkus-resteasy-jackson</artifactId>
         </dependency>
         
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-junit5-internal</artifactId>
-            <scope>test</scope>
+            <artifactId>quarkus-hibernate-validator</artifactId>
         </dependency>
         
         <dependency>

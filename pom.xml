@@ -15,6 +15,7 @@
         <module>quarkus-panache</module>
         <module>quarkus-keycloak-authz</module>
         <module>quarkus-custom-config-source</module>
+        <module>quarkus-vertx-routes</module>
     </modules>
 
     <properties>
