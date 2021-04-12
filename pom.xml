@@ -159,7 +159,7 @@
             <properties>
                 <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
                 <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-                <quarkus.version>1.11.0.Final</quarkus.version>
+                <quarkus.version>999-SNAPSHOT</quarkus.version>
             </properties>
         </profile>
         <profile>
