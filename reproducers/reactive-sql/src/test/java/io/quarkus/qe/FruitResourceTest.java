@@ -28,7 +28,7 @@ public class FruitResourceTest {
                 .when()
                 .post("/insert")
                 .then()
-                .statusCode(HttpResponseStatus.CREATED.code());
+                .statusCode(HttpResponseStatus.BAD_REQUEST.code());
     }
 
     @Test
