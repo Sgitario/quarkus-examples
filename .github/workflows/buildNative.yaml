@@ -22,6 +22,10 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Install cl.exe
         uses: ilammy/msvc-dev-cmd@v1
+      - name: Docker info
+        shell: bash
+        run: |
+          docker info
       - uses: microsoft/setup-msbuild@v1
       - name: Setup GraalVM
         id: setup-graalvm
@@ -36,3 +40,6 @@ jobs:
         run: |
           cd quarkus-micrometer
           mvn clean verify -Dquarkus.platform.group-id=io.quarkus -Dquarkus.platform.artifact-id=quarkus-bom -Dquarkus.version=1.13.2.Final -Dnative -Dquarkus.native.native-image-xmx=4g
+          cd target
+          dir
+          ./quarkus-micrometer-0.0.1-SNAPSHOT-runner
