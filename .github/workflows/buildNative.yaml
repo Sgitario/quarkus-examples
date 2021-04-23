@@ -1,0 +1,38 @@
+name: Build on Native
+on:
+  workflow_dispatch:
+jobs:
+  windows-build-released-native:
+    name: Windows - Native build
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        java: [ 11 ]
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/cache@v1
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+      - name: Install JDK {{ matrix.java }}
+        uses: joschi/setup-jdk@e87a7cec853d2dd7066adf837fe12bf0f3d45e52
+        with:
+          java-version: ${{ matrix.java }}
+      - name: Install cl.exe
+        uses: ilammy/msvc-dev-cmd@v1
+      - uses: microsoft/setup-msbuild@v1
+      - name: Setup GraalVM
+        id: setup-graalvm
+        uses: DeLaGuardo/setup-graalvm@master
+        with:
+          graalvm-version: '21.0.0.java11'
+      - name: Install native-image component
+        run: |
+          gu.cmd install native-image
+      - name: Build Native
+        shell: bash
+        run: |
+          cd quarkus-micrometer
+          mvn clean verify -Dquarkus.platform.group-id=io.quarkus -Dquarkus.platform.artifact-id=quarkus-bom -Dquarkus.version=1.13.2.Final -Dnative -Dquarkus.native.native-image-xmx=4g
