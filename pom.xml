@@ -11,34 +11,23 @@
     <name>Quarkus Examples: Parent</name>
 
     <modules>
-        <module>quarkus-opentracing</module>
-        <module>quarkus-panache</module>
-        <module>quarkus-keycloak-authz</module>
-        <module>quarkus-custom-config-source</module>
-        <module>quarkus-vertx-routes</module>
-        <module>quarkus-micrometer</module>
+        <module>rest-data-panache-orm</module>
+        <module>rest-data-panache-reactive</module>
     </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
 
-        <commons-io.version>2.8.0</commons-io.version>
-        <compiler-plugin.version>3.8.1</compiler-plugin.version>
-        <guava.version>30.0-jre</guava.version>
-        <lombok.version>1.18.16</lombok.version>
-        <jackson-databind.version>2.11.3</jackson-databind.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        
-        <rest-assured.version>4.3.1</rest-assured.version>
-        <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
-        <junit.version>5.7.0</junit.version>
-        <testcontainers.version>1.15.0</testcontainers.version>
-        <apicurio.registry.utils.serde.version>1.3.2.Final</apicurio.registry.utils.serde.version>
-        <quarkiverse.apicurio.registry.client.version>0.0.1</quarkiverse.apicurio.registry.client.version>
-        <strimzi.version>0.20.1</strimzi.version>
+
+        <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
+        <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
+        <quarkus.version>999-SNAPSHOT</quarkus.version>
         <formatter-maven-plugin.version>2.13.0</formatter-maven-plugin.version>
+        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -50,53 +39,8 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-            <dependency>
-                <groupId>org.testcontainers</groupId>
-                <artifactId>testcontainers-bom</artifactId>
-                <version>${testcontainers.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            
-            <dependency>
-                <groupId>io.strimzi</groupId>
-                <artifactId>test-container</artifactId>
-                <version>${strimzi.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.apicurio</groupId>
-                <artifactId>apicurio-registry-utils-serde</artifactId>
-                <version>${apicurio.registry.utils.serde.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkiverse.apicurio</groupId>
-                <artifactId>quarkiverse-apicurio-registry-client</artifactId>
-                <version>${quarkiverse.apicurio.registry.client.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-junit5</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 
     <build>
         <pluginManagement>
@@ -119,7 +63,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${compiler-plugin.version}</version>
+                <version>${maven-compiler-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>io.quarkus</groupId>
@@ -137,39 +81,24 @@
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${surefire-plugin.version}</version>
-                <configuration>
-                    <systemPropertyVariables>
-                        <quarkus-plugin.version>${quarkus-plugin.version}</quarkus-plugin.version>
-                        <quarkus.platform.artifact-id>${quarkus.platform.artifact-id}</quarkus.platform.artifact-id>
-                        <quarkus.version>${quarkus.version}</quarkus.version>
-                        <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
-                    </systemPropertyVariables>
-                </configuration>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
 
     <profiles>
-        <profile>
-            <id>upstream</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
-                <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-                <quarkus.version>999-SNAPSHOT</quarkus.version>
-            </properties>
-        </profile>
-        <profile>
-            <id>product</id>
-            <properties>
-                <quarkus.platform.artifact-id>quarkus-universe-bom</quarkus.platform.artifact-id>
-                <quarkus.platform.group-id>com.redhat.quarkus</quarkus.platform.group-id>
-                <quarkus.version>1.7.6.Final-redhat-00014</quarkus.version>
-            </properties>
-        </profile>
         <profile>
             <id>native</id>
             <activation>
@@ -181,13 +110,8 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-failsafe-plugin</artifactId>
-                        <version>${surefire-plugin.version}</version>
                         <executions>
                             <execution>
-                                <goals>
-                                    <goal>integration-test</goal>
-                                    <goal>verify</goal>
-                                </goals>
                                 <configuration>
                                     <systemProperties>
                                         <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
