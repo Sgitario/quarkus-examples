@@ -13,6 +13,7 @@
     <modules>
         <module>rest-data-panache-orm</module>
         <module>rest-data-panache-reactive</module>
+        <module>kubernetes-kind</module>
     </modules>
 
     <properties>
