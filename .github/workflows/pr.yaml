@@ -1,0 +1,28 @@
+name: "Pull Request Build"
+on:
+  - workflow_dispatch
+  - pull_request
+jobs:
+  linux-build-jvm:
+    name: PR - Linux - JVM build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [ 11 ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install JDK ${{ matrix.java }}
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: ${{ matrix.java }}
+          check-latest: true
+          cache: 'maven'
+      - name: Build Cloud Test Framework (temporal)
+        run: |
+          git clone https://github.com/Sgitario/jester/
+          cd jester
+          mvn clean install -Pframework -DskipTests
+      - name: Build
+        run: |
+          mvn clean install

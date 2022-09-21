@@ -26,6 +26,7 @@
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.version>999-SNAPSHOT</quarkus.version>
+        <jester.version>0.0.0-SNAPSHOT</jester.version>
         <formatter-maven-plugin.version>2.13.0</formatter-maven-plugin.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
@@ -39,6 +40,12 @@
                 <version>${quarkus.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.jester</groupId>
+                <artifactId>jester-quarkus</artifactId>
+                <version>${jester.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
