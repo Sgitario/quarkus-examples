@@ -14,6 +14,7 @@
         <module>rest-data-panache-orm</module>
         <module>rest-data-panache-reactive</module>
         <module>kubernetes-kind</module>
+        <module>openshift-s2i</module>
     </modules>
 
     <properties>
