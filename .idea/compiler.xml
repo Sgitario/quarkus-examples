@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="openshift-docker" />
         <module name="kubernetes-kind" />
         <module name="rest-data-panache-reactive" />
         <module name="orm-rest-data-panache" />

@@ -10,7 +10,7 @@ import io.jester.api.Quarkus;
 
 @Jester
 @Quarkus(forceBuild = true)
-public class OpenShiftS2iIT {
+public class OpenShiftIT {
     @Test
     public void test() {
         String response = given().get("/greetings").thenReturn().asString();

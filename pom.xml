@@ -15,6 +15,7 @@
         <module>rest-data-panache-reactive</module>
         <module>kubernetes-kind</module>
         <module>openshift</module>
+        <module>openshift-docker</module>
     </modules>
 
     <properties>
