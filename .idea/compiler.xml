@@ -6,11 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="openshift-s2i" />
         <module name="kubernetes-kind" />
         <module name="rest-data-panache-reactive" />
         <module name="orm-rest-data-panache" />
+        <module name="openshift" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="openshift-s2i" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

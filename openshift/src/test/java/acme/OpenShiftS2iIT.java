@@ -9,7 +9,7 @@ import io.jester.api.Jester;
 import io.jester.api.Quarkus;
 
 @Jester
-@Quarkus
+@Quarkus(forceBuild = true)
 public class OpenShiftS2iIT {
     @Test
     public void test() {
