@@ -5,15 +5,11 @@
     <file url="file://$PROJECT_DIR$/kubernetes-kind/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/openshift-docker/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/openshift-docker/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/openshift-s2i/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/openshift-s2i/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/openshift/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/openshift/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rest-data-panache-orm/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rest-data-panache-orm/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rest-data-panache-reactive/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rest-data-panache-reactive/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>
