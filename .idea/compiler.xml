@@ -7,11 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="openshift-docker" />
-        <module name="rest-data-panache-orm" />
         <module name="kubernetes-kind" />
+        <module name="openshift" />
+        <module name="rest-data-panache-orm" />
+        <module name="kubernetes-minikube" />
         <module name="rest-data-panache-reactive" />
         <module name="orm-rest-data-panache" />
-        <module name="openshift" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
