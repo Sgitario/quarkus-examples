@@ -11,6 +11,7 @@
         <module name="kubernetes-kind" />
         <module name="openshift" />
         <module name="rest-data-panache-orm" />
+        <module name="resteasy-reactive-rest-client-headers" />
         <module name="kubernetes-minikube" />
         <module name="rest-data-panache-reactive" />
         <module name="orm-rest-data-panache" />

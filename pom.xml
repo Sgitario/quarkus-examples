@@ -13,6 +13,7 @@
     <modules>
         <module>rest-data-panache-orm</module>
         <module>rest-data-panache-reactive</module>
+        <module>resteasy-reactive-rest-client-headers</module>
         <module>kubernetes-kind</module>
         <module>kubernetes-minikube</module>
         <module>kubernetes-ingress-rules</module>
