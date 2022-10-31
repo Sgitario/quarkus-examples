@@ -19,6 +19,7 @@
         <module>kubernetes-ingress-rules</module>
         <module>openshift</module>
         <module>openshift-docker</module>
+        <module>jib</module>
     </modules>
 
     <properties>
