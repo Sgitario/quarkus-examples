@@ -22,6 +22,7 @@
         <module>openshift</module>
         <module>openshift-docker</module>
         <module>jib</module>
+        <module>jib-helm</module>
     </modules>
 
     <properties>

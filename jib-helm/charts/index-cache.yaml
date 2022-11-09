@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  jib-helm:
+  - apiVersion: v2
+    created: "2022-11-09T12:18:58.300423065Z"
+    digest: c5c3e470d7118260543b983729841a3573e59adf611874fe399219c8c672b43e
+    name: jib-helm
+    urls:
+    - charts/jib-helm-0.0.1-SNAPSHOT.tgz
+    version: 0.0.1-SNAPSHOT
+generated: "2022-11-09T12:18:58Z"
+serverInfo: {}
