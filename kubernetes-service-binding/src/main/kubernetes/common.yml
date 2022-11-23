@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fruits-db-secret
+data:
+  # postgresql
+  host: cG9zdGdyZXNxbA==
+  # superman
+  username: c3VwZXJtYW4=
+  # superman
+  password: c3VwZXJtYW4=
+  # db
+  database: ZGI=
+  # 5432
+  port: NTQzMg==
+  # postgresql
+  type: cG9zdGdyZXNxbA==
+type: Opaque

@@ -19,6 +19,7 @@
         <module>kubernetes-kind</module>
         <module>kubernetes-minikube</module>
         <module>kubernetes-ingress-rules</module>
+        <module>kubernetes-service-binding</module>
         <module>openshift</module>
         <module>openshift-docker</module>
         <module>jib</module>
