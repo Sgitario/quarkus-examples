@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>kubernetes-service-binding</artifactId>
+    <artifactId>kubernetes-service-binding-reactive-postgresql</artifactId>
     <parent>
         <groupId>org.sgitario.quarkus</groupId>
         <artifactId>quarkus-examples</artifactId>
@@ -17,11 +17,11 @@
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-hibernate-orm-deployment</artifactId>
+            <artifactId>quarkus-hibernate-reactive-panache-deployment</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-jdbc-postgresql-deployment</artifactId>
+            <artifactId>quarkus-reactive-pg-client-deployment</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>

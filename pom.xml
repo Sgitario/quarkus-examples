@@ -19,7 +19,8 @@
         <module>kubernetes-kind</module>
         <module>kubernetes-minikube</module>
         <module>kubernetes-ingress-rules</module>
-        <module>kubernetes-service-binding</module>
+        <module>kubernetes-service-binding-orm-postgresql</module>
+        <module>kubernetes-service-binding-reactive-postgresql</module>
         <module>openshift</module>
         <module>openshift-docker</module>
         <module>jib</module>

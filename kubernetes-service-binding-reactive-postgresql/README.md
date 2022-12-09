@@ -9,4 +9,4 @@ helm install postgresql bitnami/postgresql --version 11.9.1 --set auth.username=
 ```
 
 3. Install the example: `mvn clean install -DskipTests -Dquarkus.kubernetes.deploy=true -Dquarkus.kubernetes.namespace=default`
-4. `kubectl exec -it $(kubectl get pods -l app.kubernetes.io/name=kubernetes-service-binding -o name) -- curl localhost:8080/fruits`
+4. `kubectl exec -it $(kubectl get pods -l app.kubernetes.io/name=kubernetes-service-binding-reactive-postgresql -o name) -- curl localhost:8080/fruits`
