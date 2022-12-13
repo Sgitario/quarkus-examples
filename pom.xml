@@ -18,6 +18,7 @@
         <module>resteasy-reactive-rest-client-redirects</module>
         <module>resteasy-reactive-rest-client-subresources</module>
         <module>resteasy-rest-client-subresources</module>
+        <module>keycloak-admin-client-reactive</module>
         <module>kubernetes-kind</module>
         <module>kubernetes-minikube</module>
         <module>kubernetes-ingress-rules</module>
