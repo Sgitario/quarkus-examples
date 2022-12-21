@@ -29,6 +29,7 @@
         <module>openshift-docker</module>
         <module>jib</module>
         <module>jib-helm</module>
+        <module>cdi-ambiguous</module>
     </modules>
 
     <properties>
