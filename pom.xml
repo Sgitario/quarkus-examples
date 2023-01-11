@@ -21,6 +21,7 @@
         <module>keycloak-admin-client-reactive</module>
         <module>kubernetes-knative</module>
         <module>kubernetes-kind</module>
+        <module>kubernetes-docker</module>
         <module>kubernetes-minikube</module>
         <module>kubernetes-ingress-rules</module>
         <module>kubernetes-service-binding-orm-postgresql</module>
