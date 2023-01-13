@@ -32,6 +32,7 @@
         <module>jib-helm</module>
         <module>cdi-ambiguous</module>
         <module>operator-sdk-openshift</module>
+        <module>spring-data-rest</module>
     </modules>
 
     <properties>
