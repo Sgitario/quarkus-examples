@@ -1,0 +1,47 @@
+name: Istio
+
+on:
+  workflow_dispatch:
+
+env:
+  MAVEN_ARGS: -B -e
+
+jobs:
+
+  kubernetes:
+    name: Istio + Kubernetes
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        kubernetes: [v1.20.1]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Download Maven repository
+        uses: actions/download-artifact@v3
+        with:
+          name: maven-repo
+          path: .
+      - name: Extract Maven repository
+        shell: bash
+        run: tar -xzf maven-repo.tgz -C ~
+      - name: Set up Minikube-Kubernetes
+        uses: manusa/actions-setup-minikube@v2.7.2
+        with:
+          minikube version: v1.16.0
+          kubernetes version: ${{ matrix.kubernetes }}
+          github token: ${{ secrets.GITHUB_TOKEN }}
+          start args: '--addons=metrics-server --force'
+      - name: Get kubeconfig
+        id: kubeconfig
+        run: a="$(cat ~/.kube/config)"; a="${a//'%'/'%25'}"; a="${a//$'\n'/'%0A'}"; a="${a//$'\r'/'%0D'}"; echo "::set-output name=config::$a"
+      - name: Install Istio
+        uses: huang195/actions-install-istio@v1.0.0
+        with:
+          kubeconfig: "${{steps.kubeconfig.outputs.config}}"
+          istio version: '1.15.2'
