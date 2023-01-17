@@ -22,11 +22,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Download Maven repository
-        uses: actions/download-artifact@v3
-        with:
-          name: maven-repo
-          path: .
       - name: Extract Maven repository
         shell: bash
         run: tar -xzf maven-repo.tgz -C ~
