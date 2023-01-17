@@ -28,7 +28,7 @@ jobs:
           minikube version: v1.16.0
           kubernetes version: ${{ matrix.kubernetes }}
           github token: ${{ secrets.GITHUB_TOKEN }}
-          start args: '--addons=metrics-server --force'
+          start args: '--embed-certs --addons=metrics-server --force'
       - name: Get kubeconfig
         id: kubeconfig
         run: a="$(cat ~/.kube/config)"; a="${a//'%'/'%25'}"; a="${a//$'\n'/'%0A'}"; a="${a//$'\r'/'%0D'}"; echo "::set-output name=config::$a"
