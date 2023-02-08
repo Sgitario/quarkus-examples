@@ -2,7 +2,7 @@ package acme;
 
 import java.util.List;
 
-import javax.enterprise.inject.Default;
+import jakarta.enterprise.inject.Default;
 
 import io.quarkus.hibernate.orm.rest.data.panache.PanacheEntityResource;
 import io.quarkus.panache.common.Page;
