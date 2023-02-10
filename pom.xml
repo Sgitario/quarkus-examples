@@ -15,6 +15,7 @@
         <module>rest-data-panache-reactive</module>
         <module>resteasy-rest-client-redirects</module>
         <module>resteasy-reactive</module>
+        <module>resteasy-reactive-jaxb</module>
         <module>resteasy-reactive-rest-client-headers</module>
         <module>resteasy-reactive-rest-client-redirects</module>
         <module>resteasy-reactive-rest-client-subresources</module>
