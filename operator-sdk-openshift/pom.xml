@@ -14,7 +14,6 @@
         <dependency>
             <groupId>io.quarkiverse.operatorsdk</groupId>
             <artifactId>quarkus-operator-sdk-bundle-generator</artifactId>
-            <version>5.1.1</version>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
