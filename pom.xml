@@ -21,6 +21,7 @@
         <module>resteasy-reactive-rest-client-subresources</module>
         <module>resteasy-rest-client-subresources</module>
         <module>keycloak-admin-client-reactive</module>
+        <module>kubernetes-client</module>
         <module>kubernetes-knative</module>
         <module>kubernetes-kind</module>
         <module>kubernetes-docker</module>
