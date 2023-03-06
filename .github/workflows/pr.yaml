@@ -24,12 +24,6 @@ jobs:
           cd quarkus
           ./mvnw ${MAVEN_ARGS} clean install -Dquickly
           cd ..
-      - name: Build Jester Test Framework 0.0.0-SNAPSHOT
-        run: |
-          git clone https://github.com/Sgitario/jester/
-          cd jester
-          mvn clean install -Pframework -DskipTests
-          cd ..
       - name: Build
         run: |
           mvn clean install --fail-at-end

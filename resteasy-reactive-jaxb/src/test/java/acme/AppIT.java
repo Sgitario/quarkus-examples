@@ -12,8 +12,8 @@ import jakarta.ws.rs.core.MediaType;
 
 import org.junit.jupiter.api.Test;
 
-import io.jester.api.Jester;
-import io.jester.api.Quarkus;
+import io.github.snowdrop.jester.api.Jester;
+import io.github.snowdrop.jester.api.Quarkus;
 import io.restassured.RestAssured;
 import io.restassured.builder.MultiPartSpecBuilder;
 import io.restassured.specification.MultiPartSpecification;
