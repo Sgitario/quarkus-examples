@@ -2,8 +2,8 @@ package acme;
 
 import org.junit.jupiter.api.Test;
 
-import io.jester.api.Jester;
-import io.jester.api.Quarkus;
+import io.github.snowdrop.jester.api.Jester;
+import io.github.snowdrop.jester.api.Quarkus;
 
 @Jester
 @Quarkus(forceBuild = true)

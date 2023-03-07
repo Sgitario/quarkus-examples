@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import io.jester.api.Jester;
-import io.jester.api.Quarkus;
+import io.github.snowdrop.jester.api.Jester;
+import io.github.snowdrop.jester.api.Quarkus;
 
 // Disabled because the ConfigMap 'app-config' is not found when running the test which is expected
 @Disabled

@@ -39,7 +39,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>io.jester</groupId>
+            <groupId>io.github.snowdrop.jester</groupId>
             <artifactId>jester-quarkus</artifactId>
             <scope>test</scope>
         </dependency>

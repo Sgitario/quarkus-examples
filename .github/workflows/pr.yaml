@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [ 11 ]
+        java: [ 17 ]
     steps:
       - uses: actions/checkout@v3
       - name: Install JDK ${{ matrix.java }}
@@ -18,11 +18,12 @@ jobs:
           java-version: ${{ matrix.java }}
           check-latest: true
           cache: 'maven'
-      - name: Build Cloud Test Framework (temporal)
+      - name: Build Quarkus 999-SNAPSHOT
         run: |
-          git clone https://github.com/Sgitario/jester/
-          cd jester
-          mvn clean install -Pframework -DskipTests
+          git clone https://github.com/quarkusio/quarkus
+          cd quarkus
+          ./mvnw ${MAVEN_ARGS} clean install -Dquickly
+          cd ..
       - name: Build
         run: |
-          mvn clean install
+          mvn clean install --fail-at-end
