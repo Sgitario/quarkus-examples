@@ -12,9 +12,8 @@
 
     <modules>
         <module>rest-data-panache-orm</module>
-        <!-- Disabled on 999-SNAPSHOT
         <module>rest-data-panache-reactive</module>
-        -->
+        <module>resteasy</module>
         <module>resteasy-rest-client-redirects</module>
         <module>resteasy-reactive</module>
         <module>resteasy-reactive-jaxb</module>
@@ -30,9 +29,7 @@
         <module>kubernetes-minikube</module>
         <module>kubernetes-ingress-rules</module>
         <module>kubernetes-service-binding-orm-postgresql</module>
-        <!-- Disabled on 999-SNAPSHOT
         <module>kubernetes-service-binding-reactive-postgresql</module>
-        -->
         <module>openshift</module>
         <module>openshift-docker</module>
         <module>jib</module>
