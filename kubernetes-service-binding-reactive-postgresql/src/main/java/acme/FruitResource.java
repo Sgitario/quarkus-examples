@@ -7,14 +7,12 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 
-import io.smallrye.common.annotation.Blocking;
 import io.smallrye.mutiny.Uni;
 
 @Path("fruits")
 public class FruitResource {
 
     @GET
-    @Blocking
     @Produces("application/json")
     @Consumes("application/json")
     public Uni<List<Fruit>> get() {
