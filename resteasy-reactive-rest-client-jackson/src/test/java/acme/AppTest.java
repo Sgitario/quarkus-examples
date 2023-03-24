@@ -20,7 +20,7 @@ public class AppTest {
     URI baseUri;
 
     @Test
-    void testHeadersWithList() {
+    void testSse() {
         var resultList = new CopyOnWriteArrayList<>();
         RestClientBuilder.newBuilder().baseUri(baseUri).build(SeeClient.class)
                 .getItems()
