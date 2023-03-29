@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
