@@ -52,7 +52,7 @@
         <quarkus.version>999-SNAPSHOT</quarkus.version>
         <quarkus-operator-sdk.version>5.1.4</quarkus-operator-sdk.version>
         <quarkus-helm.version>1.0.4</quarkus-helm.version>
-        <jester.version>0.0.4</jester.version>
+        <jester.version>0.0.5</jester.version>
         <formatter-maven-plugin.version>2.13.0</formatter-maven-plugin.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
