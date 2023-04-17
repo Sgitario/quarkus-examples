@@ -14,8 +14,10 @@
         <module>rest-data-panache-orm</module>
         <module>rest-data-panache-reactive</module>
         <module>resteasy</module>
+        <module>resteasy-jackson</module>
         <module>resteasy-rest-client-redirects</module>
         <module>resteasy-reactive</module>
+        <module>resteasy-reactive-jackson</module>
         <module>resteasy-reactive-jaxb</module>
         <module>resteasy-reactive-rest-client-jackson</module>
         <module>resteasy-reactive-rest-client-headers</module>

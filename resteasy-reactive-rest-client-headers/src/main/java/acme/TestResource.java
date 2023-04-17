@@ -12,6 +12,7 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.HeaderParam;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.MediaType;
@@ -32,10 +33,10 @@ public class TestResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/headers-list")
-    public String headersList(@HeaderParam("foo") List foo, @RestHeader List header) {
+    public String headersList(@HeaderParam("foo") List foo, @RestHeader List header, @QueryParam("query") String query) {
         List<String> allHeaders = new ArrayList<>();
         foo.forEach(v -> allHeaders.add((String) v));
         header.forEach(v -> allHeaders.add((String) v));
-        return allHeaders.stream().collect(Collectors.joining(", "));
+        return query + "=" + allHeaders.stream().collect(Collectors.joining(", "));
     }
 }
