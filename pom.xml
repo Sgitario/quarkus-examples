@@ -50,7 +50,7 @@
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.version>999-SNAPSHOT</quarkus.version>
-        <quarkus-operator-sdk.version>6.0.0</quarkus-operator-sdk.version>
+        <quarkus-operator-sdk.version>6.0.1</quarkus-operator-sdk.version>
         <quarkus-helm.version>1.0.5</quarkus-helm.version>
         <jester.version>0.0.5</jester.version>
         <formatter-maven-plugin.version>2.13.0</formatter-maven-plugin.version>
