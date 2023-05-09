@@ -19,6 +19,7 @@
         <module>resteasy-reactive</module>
         <module>resteasy-reactive-jackson</module>
         <module>resteasy-reactive-jaxb</module>
+        <module>resteasy-reactive-rest-client</module>
         <module>resteasy-reactive-rest-client-jackson</module>
         <module>resteasy-reactive-rest-client-headers</module>
         <module>resteasy-reactive-rest-client-redirects</module>
@@ -40,6 +41,7 @@
         <module>cdi-ambiguous</module>
         <module>operator-sdk-openshift</module>
         <module>spring-data-rest</module>
+        <module>grpc-openshift</module>
     </modules>
 
     <properties>
