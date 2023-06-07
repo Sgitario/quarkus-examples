@@ -59,7 +59,7 @@
         <jester.version>0.0.5</jester.version>
         <formatter-maven-plugin.version>2.13.0</formatter-maven-plugin.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.1.0</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
     </properties>
 
     <dependencyManagement>
