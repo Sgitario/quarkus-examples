@@ -24,6 +24,7 @@
         <module>resteasy-reactive-rest-client-headers</module>
         <module>resteasy-reactive-rest-client-redirects</module>
         <module>resteasy-reactive-rest-client-subresources</module>
+        <module>resteasy-reactive-rest-client-opentelemetry</module>
         <module>resteasy-rest-client-subresources</module>
         <module>keycloak-admin-client-reactive</module>
         <module>kubernetes-client</module>
