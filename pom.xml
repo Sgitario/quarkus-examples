@@ -15,7 +15,6 @@
         <module>rest-data-panache-reactive</module>
         <module>resteasy</module>
         <module>resteasy-jackson</module>
-        <module>resteasy-rest-client-redirects</module>
         <module>resteasy-reactive</module>
         <module>resteasy-reactive-jackson</module>
         <module>resteasy-reactive-jaxb</module>
@@ -25,6 +24,8 @@
         <module>resteasy-reactive-rest-client-redirects</module>
         <module>resteasy-reactive-rest-client-subresources</module>
         <module>resteasy-reactive-rest-client-opentelemetry</module>
+        <module>resteasy-rest-client</module>
+        <module>resteasy-rest-client-redirects</module>
         <module>resteasy-rest-client-subresources</module>
         <module>keycloak-admin-client-reactive</module>
         <module>kubernetes-client</module>
