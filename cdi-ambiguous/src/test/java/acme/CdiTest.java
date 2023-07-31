@@ -2,12 +2,11 @@ package acme;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import jakarta.inject.Inject;
-
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
+import jakarta.inject.Inject;
 
 @QuarkusTest
 public class CdiTest {
