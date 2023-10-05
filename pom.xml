@@ -44,6 +44,7 @@
         <module>operator-sdk-openshift</module>
         <module>spring-data-rest</module>
         <module>grpc-openshift</module>
+        <module>mvel2</module>
     </modules>
 
     <properties>
@@ -62,6 +63,7 @@
         <formatter-maven-plugin.version>2.13.0</formatter-maven-plugin.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+        <lombok.version>1.18.30</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -90,6 +92,12 @@
                 <groupId>io.quarkiverse.helm</groupId>
                 <artifactId>quarkus-helm-deployment</artifactId>
                 <version>${quarkus-helm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
