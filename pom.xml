@@ -45,6 +45,7 @@
         <module>spring-data-rest</module>
         <module>grpc-openshift</module>
         <module>mvel2</module>
+        <module>kafka-orm-transactions</module>
     </modules>
 
     <properties>
