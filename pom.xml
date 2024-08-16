@@ -64,7 +64,7 @@
         <jester.version>0.0.5</jester.version>
         <formatter-maven-plugin.version>2.13.0</formatter-maven-plugin.version>
         <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.3.1</maven-surefire-plugin.version>
         <lombok.version>1.18.30</lombok.version>
     </properties>
 
