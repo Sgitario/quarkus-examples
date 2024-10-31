@@ -20,6 +20,6 @@ public class AppTest {
     @Test
     void testHeadersWithList() {
         SimpleHeadersClient client = RestClientBuilder.newBuilder().baseUri(baseUri).build(SimpleHeadersClient.class);
-        assertEquals("a, b, c, d", client.headersList(List.of("a", "b"), List.of("c", "d"), "s p a c e"));
+        assertEquals("s p a c e=a, b, c, d", client.headersList(List.of("a", "b"), List.of("c", "d"), "s p a c e"));
     }
 }

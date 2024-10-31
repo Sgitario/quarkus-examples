@@ -14,7 +14,9 @@ import io.restassured.http.ContentType;
 public class AppIT {
     @Test
     public void test() {
-        Person response = given().accept(ContentType.JSON).get("/person").thenReturn().as(Person.class);
+        Person response = given()
+                .accept(ContentType.JSON).get("/person")
+                .then().extract().as(Person.class);
         assertEquals("Jose", response.getName());
     }
 }

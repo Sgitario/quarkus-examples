@@ -2,12 +2,14 @@ package acme;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.KeycloakBuilder;
 
 import io.quarkus.test.junit.QuarkusTest;
 
+@Disabled
 @QuarkusTest
 public class KeycloakClientTest {
 

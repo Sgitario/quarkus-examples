@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-resteasy-reactive-jaxb-deployment</artifactId>
+            <artifactId>quarkus-rest-jaxb-deployment</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
