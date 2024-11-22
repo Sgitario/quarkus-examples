@@ -8,9 +8,11 @@ import io.quarkus.panache.common.Sort;
 import io.quarkus.rest.data.panache.MethodProperties;
 import io.quarkus.rest.data.panache.ResourceProperties;
 import jakarta.transaction.Transactional;
+import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
 
 // @UnlessBuildProperty(name = "foo.enabled", stringValue = "false")
 @ResourceProperties(hal = true)
@@ -25,6 +27,8 @@ public interface AuthorsResource extends PanacheEntityResource<Author, Long> {
     @Transactional
     @POST
     @Path("/name/{name}")
+    @Consumes
+    @Produces("application/json")
     default Author addByName(@PathParam("name") String name) {
         Author author = new Author();
         author.name = name;

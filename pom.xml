@@ -46,6 +46,7 @@
         <module>mvel2</module>
         <module>kafka-orm-transactions</module>
         <module>smallrye-config</module>
+        <module>email-qute</module>
     </modules>
 
     <properties>
