@@ -11,7 +11,7 @@ public class NewBookConsumer {
     @Transactional
     @Incoming("new-book-in")
     void consume(String title) {
-        Log.infof("Received new message in books topic with title `{}`", title);
+        Log.infov("Received new message in books topic with title `{0}`", title);
         Book book = new Book();
         book.title = title;
         book.persist();

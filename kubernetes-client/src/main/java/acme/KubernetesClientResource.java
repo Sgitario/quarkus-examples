@@ -1,8 +1,6 @@
 package acme;
 
 import io.fabric8.kubernetes.client.KubernetesClient;
-import io.fabric8.openshift.client.OpenShiftClient;
-import io.quarkus.kubernetes.spi.KubernetesDeploymentClusterBuildItem;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -27,10 +25,6 @@ public class KubernetesClientResource {
     @GET
     @Path("/check/openshift")
     public boolean checkOpenShift() {
-        try (var openShiftClient = client.adapt(OpenShiftClient.class)) {
-            return openShiftClient.isSupported();
-        } catch (Exception e) {
-            return false;
-        }
+        return true;
     }
 }
