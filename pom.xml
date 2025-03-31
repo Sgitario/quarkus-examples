@@ -58,7 +58,7 @@
 
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
-        <quarkus.version>3.18.2</quarkus.version>
+        <quarkus.version>3.21.0</quarkus.version>
         <quarkus-operator-sdk.version>6.6.8</quarkus-operator-sdk.version>
         <quarkus-helm.version>1.2.3</quarkus-helm.version>
         <jester.version>0.0.5</jester.version>
