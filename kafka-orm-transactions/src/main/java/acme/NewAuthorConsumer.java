@@ -7,7 +7,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
-import org.eclipse.microprofile.reactive.messaging.Message;
 
 /**
  * Approach 1: Using MutinyEmitter
@@ -63,6 +62,9 @@ public class NewAuthorConsumer {
         return kafkaTx.withTransaction(emitter -> {
             persistAuthor(message);
             emitter.send(message + "-book1");
+            if (message.equals("Jack")) {
+                emitter.markForAbort();
+            }
             return Uni.createFrom().voidItem();
         });
     }
@@ -70,6 +72,6 @@ public class NewAuthorConsumer {
     private void persistAuthor(String name) {
         Author author = new Author();
         author.name = name;
-        author.persist();
+        author.persistAndFlush();
     }
 }
