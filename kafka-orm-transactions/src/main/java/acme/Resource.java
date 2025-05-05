@@ -1,5 +1,6 @@
 package acme;
 
+import io.quarkus.logging.Log;
 import java.util.List;
 import io.smallrye.reactive.messaging.MutinyEmitter;
 
@@ -20,6 +21,7 @@ public class Resource {
     @GET
     @Path("/authors")
     public List<Author> authors() {
+        Log.info("Fetch authors");
         return Author.listAll();
     }
 
@@ -27,6 +29,7 @@ public class Resource {
     @GET
     @Path("/books")
     public List<Book> books() {
+        Log.info("Fetch books");
         return Book.listAll();
     }
 
@@ -34,6 +37,7 @@ public class Resource {
     @POST
     @Path("/authors/{name}")
     public void submitAuthor(@RestPath String name) {
+        Log.infov("Write author {0}", name);
         newAuthor.sendAndAwait(name);
     }
 }
