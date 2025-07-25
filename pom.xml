@@ -1,8 +1,5 @@
-<?xml version="1.0"?>
-<project
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
-    xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.sgitario.quarkus</groupId>
     <artifactId>quarkus-examples</artifactId>
@@ -47,15 +44,14 @@
         <module>kafka-orm-transactions</module>
         <module>smallrye-config</module>
         <module>email-qute</module>
+        <module>kafka-batch-consumer</module>
     </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.version>3.21.0</quarkus.version>
@@ -77,25 +73,21 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
             <dependency>
                 <groupId>io.github.snowdrop.jester</groupId>
                 <artifactId>jester-quarkus</artifactId>
                 <version>${jester.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>io.quarkiverse.operatorsdk</groupId>
                 <artifactId>quarkus-operator-sdk-bundle-generator</artifactId>
                 <version>${quarkus-operator-sdk.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>io.quarkiverse.helm</groupId>
                 <artifactId>quarkus-helm-deployment</artifactId>
                 <version>${quarkus-helm.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
